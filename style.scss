@@ -33,6 +33,13 @@ body {
   font-weight: bold;
 }
 
+.link-backer-success {
+  background: rgba(48, 248, 48, 0.299);
+}
+
+.link-backer-error {
+  background: rgba(104, 13, 13, 0.366);
+}
 
 .main {
   margin-top: 1rem;
@@ -50,7 +57,6 @@ body {
       border-bottom: 1px solid #343434;
       
       padding: 5px;
-      background: pink;
     }
     
   }

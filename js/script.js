@@ -9,11 +9,11 @@ let sites = [];
 
 function generateNewSite() {
   let newSite = wordList[Math.floor(Math.random() * wordList.length)];
-  let newSiteUrl = `http://${newSite}.com`;
+  let newSiteUrl = `https://${newSite}.com`;
   let newSiteDiv = document.createElement("div");
   newSiteDiv.innerHTML = `<a target="_blank" href="${newSiteUrl}">${newSite}.com</a>`;
   newSiteDiv.childNodes[0].classList.add("status-error");
-
+  newSiteDiv.classList.add("link-backer-error");
   fetch(newSiteUrl).then((response) => {
 
     async function checkSaleStatus() {
@@ -48,11 +48,15 @@ function generateNewSite() {
 
     if (response.status == 200) {
       newSiteDiv.childNodes[0].classList.remove("status-error");
+      newSiteDiv.classList.remove("link-backer-error");
       newSiteDiv.childNodes[0].classList.add("status-success");
+      newSiteDiv.classList.add("link-backer-success")
     } else if (response.status == 404) {
       newSiteDiv.childNodes[0].classList.add("status-error");
+      newSiteDiv.classList.add("link-backer-error");
     } else {
       newSiteDiv.childNodes[0].classList.add("status-error");
+      newSiteDiv.classList.add("link-backer-error");
     }
   });
 
