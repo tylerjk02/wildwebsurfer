@@ -9,7 +9,7 @@ let sites = [];
 
 function generateNewSite() {
   let newSite = wordList[Math.floor(Math.random() * wordList.length)];
-  let newSiteUrl = `http://${newSite}.com`;
+  let newSiteUrl = `https://${newSite}.com`;
   let newSiteDiv = document.createElement("div");
   newSiteDiv.innerHTML = `<a target="_blank" href="${newSiteUrl}">${newSite}.com</a>`;
   newSiteDiv.childNodes[0].classList.add("status-error");
