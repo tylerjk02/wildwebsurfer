@@ -1,0 +1,61 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Roboto', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  background: #e4e4e4;
+  color: #232323;
+}
+
+.status-success::after {
+  content: " Status 200";
+  color: green;
+}
+
+.status-error::after {
+  content: " Status Broken or 404";
+  color: red;
+}
+
+.status-for-sale::before {
+  content: "Domain for sale: ";
+  color: green;
+  font-weight: bold;
+}
+
+
+.main {
+  margin-top: 1rem;
+
+  .site-generator-btn {
+    padding: 5px;
+
+  }
+
+  .site-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    div {
+      border-bottom: 1px solid #343434;
+      
+      padding: 5px;
+      background: pink;
+    }
+    
+  }
+  .site-list:last-child {
+    border-bottom: none;
+  }
+
+}

@@ -1,0 +1,71 @@
+import wordList from './words.js'
+
+let siteGeneratorTen = document.getElementById("site-generator-ten");
+let siteGenerator = document.getElementById("site-generator");
+let siteList = document.getElementById("site-list");
+
+let sites = [];
+
+
+function generateNewSite() {
+  let newSite = wordList[Math.floor(Math.random() * wordList.length)];
+  let newSiteUrl = `http://${newSite}.com`;
+  let newSiteDiv = document.createElement("div");
+  newSiteDiv.innerHTML = `<a target="_blank" href="${newSiteUrl}">${newSite}.com</a>`;
+  newSiteDiv.childNodes[0].classList.add("status-error");
+
+  fetch(newSiteUrl).then((response) => {
+
+    async function checkSaleStatus() {
+      try {
+        const siteUrl = response.url;
+
+        const { data } = await axios({
+          method: 'GET',
+          url: siteUrl,
+        }) 
+
+        const $ = cheerio.load(data);
+        console.log(data);
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    checkSaleStatus()
+
+    console.log(response.url);
+    let responseUrl = response.url;
+    let sellerDomains = [
+      "godaddy",
+      "dan.com",
+      "domain",
+      "squadhelp",
+      "uniregistry",
+    ];
+    if (sellerDomains.some((v) => responseUrl.includes(v))) {
+      newSiteDiv.childNodes[0].classList.add("status-for-sale");
+    }
+
+    if (response.status == 200) {
+      newSiteDiv.childNodes[0].classList.remove("status-error");
+      newSiteDiv.childNodes[0].classList.add("status-success");
+    } else if (response.status == 404) {
+      newSiteDiv.childNodes[0].classList.add("status-error");
+    } else {
+      newSiteDiv.childNodes[0].classList.add("status-error");
+    }
+  });
+
+  siteList.appendChild(newSiteDiv);
+  sites.push(newSiteUrl);
+}
+
+siteGenerator.addEventListener("click", () => {
+  generateNewSite();
+});
+
+siteGeneratorTen.addEventListener("click", () => {
+  for (let i = 0; i < 10; i++) {
+    generateNewSite();
+  }
+});
