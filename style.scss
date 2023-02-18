@@ -18,12 +18,16 @@ body {
 }
 
 .status-success::after {
-  content: " Status 200";
+  content: " - Url Working";
+  font-size: 12px;
+  font-weight: bold;
   color: green;
 }
 
 .status-error::after {
-  content: " Status Broken or 404";
+  content: " - Url Broken";
+  font-size: 12px;
+  font-weight: bold;
   color: red;
 }
 
@@ -31,6 +35,7 @@ body {
   content: "Domain for sale: ";
   color: green;
   font-weight: bold;
+  font-size: 12px;
 }
 
 .link-backer-success {

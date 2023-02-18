@@ -29,14 +29,13 @@ function generateNewSite() {
       newSiteDiv.childNodes[0].classList.add("status-for-sale");
     }
 
+
+
     if (response.status == 200) {
       newSiteDiv.childNodes[0].classList.remove("status-error");
       newSiteDiv.classList.remove("link-backer-error");
       newSiteDiv.childNodes[0].classList.add("status-success");
       newSiteDiv.classList.add("link-backer-success")
-    } else if (response.status == 404) {
-      newSiteDiv.childNodes[0].classList.add("status-error");
-      newSiteDiv.classList.add("link-backer-error");
     } else {
       newSiteDiv.childNodes[0].classList.add("status-error");
       newSiteDiv.classList.add("link-backer-error");
