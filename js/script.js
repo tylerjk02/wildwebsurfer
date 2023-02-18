@@ -16,23 +16,6 @@ function generateNewSite() {
   newSiteDiv.classList.add("link-backer-error");
   fetch(newSiteUrl).then((response) => {
 
-    async function checkSaleStatus() {
-      try {
-        const siteUrl = response.url;
-
-        const { data } = await axios({
-          method: 'GET',
-          url: siteUrl,
-        }) 
-
-        const $ = cheerio.load(data);
-        console.log(data);
-      } catch (err) {
-        console.log(err)
-      }
-    }
-    checkSaleStatus()
-
     console.log(response.url);
     let responseUrl = response.url;
     let sellerDomains = [
