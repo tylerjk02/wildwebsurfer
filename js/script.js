@@ -14,7 +14,9 @@ function generateNewSite() {
   newSiteDiv.innerHTML = `<a target="_blank" href="${newSiteUrl}">${newSite}.com</a>`;
   newSiteDiv.childNodes[0].classList.add("status-error");
   newSiteDiv.classList.add("link-backer-error");
-  fetch(newSiteUrl).then((response) => {
+  fetch(newSiteUrl, {
+    method: "GET",
+  }).then((response) => {
 
     console.log(response.url);
     let responseUrl = response.url;
@@ -50,8 +52,3 @@ siteGenerator.addEventListener("click", () => {
   generateNewSite();
 });
 
-siteGeneratorTen.addEventListener("click", () => {
-  for (let i = 0; i < 10; i++) {
-    generateNewSite();
-  }
-});
