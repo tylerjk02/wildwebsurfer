@@ -1,0 +1,23 @@
+{
+  "name": "wildwebsurfer-gp",
+  "version": "1.0.0",
+  "description": "Find Unused Domains and Random Websites.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tylerjk02/wildwebsurfer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tylerjk02/wildwebsurfer/issues"
+  },
+  "homepage": "https://github.com/tylerjk02/wildwebsurfer#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12"
+  }
+}

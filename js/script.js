@@ -1,5 +1,7 @@
 import wordList from './words.js'
 
+
+
 let siteGeneratorTen = document.getElementById("site-generator-ten");
 let siteGenerator = document.getElementById("site-generator");
 let siteList = document.getElementById("site-list");
@@ -14,6 +16,7 @@ function generateNewSite() {
   newSiteDiv.innerHTML = `<a target="_blank" href="${newSiteUrl}">${newSite}.com</a>`;
   newSiteDiv.childNodes[0].classList.add("status-error");
   newSiteDiv.classList.add("link-backer-error");
+
   fetch(newSiteUrl, {
     method: "GET",
   }).then((response) => {
@@ -21,10 +24,10 @@ function generateNewSite() {
     console.log(response.url);
     let responseUrl = response.url;
     let sellerDomains = [
-      "godaddy",
-      "dan.com",
       "domain",
+      "dan.com",
       "squadhelp",
+      "godaddy",
       "uniregistry",
     ];
     if (sellerDomains.some((v) => responseUrl.includes(v))) {
