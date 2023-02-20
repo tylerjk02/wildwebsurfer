@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="title" content="WildWebSurfer" />
+    <meta
+      name="description"
+      content="Generate Random Urls and Find Domains for Sale"
+    />
+    <meta
+      name="keywords"
+      content="Random Websites, Domains for Sales, Domains, Random, Websites, Dev Tool, Web Dev Tool"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="English" />
+    <meta name="author" content="Tyler J Kraft" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./public/img/favicon-32x32.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./public/img/favicon-32x32.png"
+    />
     <script defer type="module" src="./js/script.js"></script>
     <title>WildWebSurfer</title>
   </head>
@@ -13,21 +31,35 @@
     <header class="header">
       <div class="brand">
         <a href="#" class="brand-wrap">
-          <img src="./public/img/logo.png" alt="logo">
+          <img src="./public/img/logo.png" alt="logo" />
           <h1>WildWebSurfer</h1>
         </a>
-        <p class="subtitle">Find Unused Domains and Random Websites</p>  
+        <p class="subtitle">Find Unused Domains and Random Websites</p>
         <div class="warning-wrap">
-          <p style="font-size: 12px">WildWebSurfer is not responsible for the contents of these websites.</p>
-          <p style="font-size: 12px">Due to their random nature, some may contain strange or graphic content. <b>You have been warned</b>.</p>
-          <p style="font-size: 12px; color: #b21717;">*Occasionally throws errors for working sites.</p>  
+          <p style="font-size: 12px">
+            WildWebSurfer is not responsible for the contents of these websites.
+          </p>
+          <p style="font-size: 12px">
+            Due to their random nature, some may contain strange or graphic
+            content.<br />
+            <b>You have been warned</b>.
+          </p>
         </div>
-        
       </div>
     </header>
 
     <main class="main">
       <button class="site-generator-btn" id="site-generator">Generate</button>
+      
+      <div class="known-errors" id="error-box">
+        <h3>Known Errors:</h3>
+        <p style="font-size: 12px; color: #b21717">
+          -Occasionally throws errors for working sites.<br />
+          -URL response tester broken on iOS devices.<br />
+          -Domain-for-sale tester misses some sites
+        </p>
+      </div>
+
       <div class="site-list" id="site-list"></div>
     </main>
   </body>

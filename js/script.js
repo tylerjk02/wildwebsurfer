@@ -82,5 +82,7 @@ function generateNewSite() {
 
 siteGenerator.addEventListener("click", () => {
   generateNewSite();
+  let errorBox = document.getElementById('error-box');
+  errorBox.style.display = 'none';
 });
 

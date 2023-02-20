@@ -1,10 +1,13 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
 }
@@ -15,6 +18,8 @@ body {
   font-family: "Roboto", "Helvetica Neue", Arial, Helvetica, sans-serif;
   background: #e4e4e4;
   color: #232323;
+  display: flex;
+  flex-direction: column;
 }
 
 .status-success::after {
@@ -46,11 +51,21 @@ body {
   background: rgba(104, 13, 13, 0.366);
 }
 
-.main {
-  margin-top: 1rem;
-}
 .main .site-generator-btn {
-  padding: 5px;
+  border: none;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+  width: 35%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: papayawhip;
+  color: #232323;
+}
+.main .site-generator-btn:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  background-color: rgb(255, 233, 198);
+}
+.main .site-generator-btn:active {
+  background-color: papayawhip;
 }
 .main .site-list {
   margin-top: 1rem;
@@ -72,14 +87,17 @@ body {
 .brand a img {
   width: 70px;
 }
-.brand .subtitle {
-  margin-bottom: 0.5rem;
-}
 .brand .warning-wrap {
-  border-radius: 3px;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
-  width: 85%;
-  margin: 0 auto;
+  padding: 5px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  margin: 0.5rem auto 1rem auto;
+  background: papayawhip;
+}
+
+.known-errors {
+  background: PapayaWhip;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
   padding: 0.5rem;
-  background: #9a9a9a;
+  width: 100%;
+  margin-top: 1rem;
 }/*# sourceMappingURL=style.css.map */
