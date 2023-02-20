@@ -70,3 +70,27 @@ body {
   }
 
 }
+
+.brand {
+  a {
+    text-decoration: none;
+    color: #232323;
+  }
+
+  a img {
+    width: 70px;
+  }
+
+  .subtitle {
+    margin-bottom: .5rem;
+  }
+
+  .warning-wrap {
+    border-radius: 3px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.7);
+    width: 85%;
+    margin: 0 auto;
+    padding: .5rem;
+    background: #9a9a9a;
+  }
+}

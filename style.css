@@ -63,4 +63,23 @@ body {
 }
 .main .site-list:last-child {
   border-bottom: none;
+}
+
+.brand a {
+  text-decoration: none;
+  color: #232323;
+}
+.brand a img {
+  width: 70px;
+}
+.brand .subtitle {
+  margin-bottom: 0.5rem;
+}
+.brand .warning-wrap {
+  border-radius: 3px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
+  width: 85%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  background: #9a9a9a;
 }/*# sourceMappingURL=style.css.map */
