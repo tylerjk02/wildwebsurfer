@@ -32,15 +32,23 @@ function generateNewSite() {
     let doc = parser.parseFromString(html, 'text/html');
 
     let aTagGrabber = doc.querySelectorAll('a');
+    let pTagGrabber = doc.querySelectorAll('p');
 
-    // console.log(aTagGrabber.forEach(e => {
-    //   console.log(e.innerText);
-    // }));
+    pTagGrabber.forEach(e => {
+      console.log(e.innerText.trim());
+    });
 
     aTagGrabber.forEach(e => {
       let substr = 'domain'
-      let substrTwo = 'Domain'
-      if(e.innerText.includes(substr) || e.innerText.includes(substrTwo)) {
+      let lowerCaseE = e.innerText.toLowerCase();
+      if(lowerCaseE.includes(substr)) {
+        newSiteDiv.childNodes[0].classList.add("status-for-sale");
+      }
+    });
+    pTagGrabber.forEach(e => {
+      let substr = 'Domain'
+      let substrLower = substr.toLowerCase();
+      if(e.innerText.includes(substr) || e.innerText.includes(substrLower)) {
         newSiteDiv.childNodes[0].classList.add("status-for-sale");
       }
     });
