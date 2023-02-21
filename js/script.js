@@ -24,7 +24,6 @@ function generateNewSite() {
   newSiteDiv.childNodes[0].classList.add("status-unknown"); // New default.
   newSiteDiv.classList.add("link-backer-unknown"); // New default.
 
-  // domain-for-sale checker
 
   fetch(newSiteUrl)
     .then(function (response) {
@@ -316,6 +315,7 @@ function generateNewSite() {
           }
         })
     );
+    
 
   siteList.appendChild(newSiteDiv);
   sites.push(newSiteUrl);
