@@ -133,6 +133,15 @@ body {
   content: "\f1ea" + " " + "News";
   @include tag-basics;
 }
+.tag-sports::after {
+  content: "\f5a2" + " " + "Sports";
+  @include tag-basics;
+}
+.tag-cloths::after {
+  content: "\f553" + " " + "Clothes";
+  @include tag-basics;
+}
+
 
 .tag-empty::after {
   font-family: "Roboto", "Helvetica Neue", Arial, Helvetica, sans-serif !important;

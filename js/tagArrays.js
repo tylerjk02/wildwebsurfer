@@ -22,7 +22,14 @@ let furnitureArr = ["furniture", "decoration"];
 
 let newsArr = ["news"];
 
+let sportsArr = ["sport", "sports"];
+
+let clothingArr = ["clothes", "clothing", "shirts", "pants", "sweaters"];
+
+
 export {
+  clothingArr,
+  sportsArr,
   foodArr,
   softwareArr,
   constructionArr,

@@ -196,6 +196,30 @@ body {
   font-weight: 900;
 }
 
+.tag-sports::after {
+  content: "\f5a2  Sports";
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: #f8f0fb;
+  color: #211a1d;
+  font-size: 12px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.tag-cloths::after {
+  content: "\f553  Clothes";
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: #f8f0fb;
+  color: #211a1d;
+  font-size: 12px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
 .tag-empty::after {
   font-family: "Roboto", "Helvetica Neue", Arial, Helvetica, sans-serif !important;
   font-weight: bold !important;

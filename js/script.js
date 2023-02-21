@@ -20,6 +20,8 @@ import {
   gameArr,
   furnitureArr,
   newsArr,
+  sportsArr,
+  clothingArr,
 } from "./tagArrays.js";
 
 // let siteGeneratorTen = document.getElementById("site-generator-ten");
@@ -113,7 +115,7 @@ function generateNewSite() {
         h3TagGrabber.forEach((e) => {
           let newH3String = e.innerText.toLowerCase().trim();
           foundStrings.push(newH3String);
-        })
+        });
 
         // word count calc
 
@@ -138,7 +140,6 @@ function generateNewSite() {
             acc,
             currentKey
           ) {
-            /* you may want to include a binary search here */
             for (var i = 0; i < amount; i++) {
               if (!acc[i]) {
                 acc[i] = {
@@ -171,13 +172,12 @@ function generateNewSite() {
             wordResultsLowercase.push(e.toLowerCase());
           });
 
+          // START TAGS
+
           //secondary back-up domain sale check
           if (wordResultsLowercase.includes("domain")) {
             newSiteDiv.childNodes[0].classList.add("status-for-sale");
           }
-
-          // START TAGS
-
           //food tag
           if (wordResultsLowercase.some((r) => foodArr.includes(r)) == true) {
             newSiteDiv.childNodes[0].classList.add("tag-food");
@@ -239,7 +239,14 @@ function generateNewSite() {
           if (wordResultsLowercase.some((r) => newsArr.includes(r)) == true) {
             newSiteDiv.childNodes[0].classList.add("tag-news");
           }
-
+          //sports tag
+          if (wordResultsLowercase.some((r) => sportsArr.includes(r)) == true) {
+            newSiteDiv.childNodes[0].classList.add("tag-sports");
+          }
+          //clothing tag
+          if (wordResultsLowercase.some((r) => clothingArr.includes(r)) == true) {
+            newSiteDiv.childNodes[0].classList.add("tag-clothes");
+          }
           // END TAGS
 
           console.log(wordResultsLowercase);
