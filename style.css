@@ -16,56 +16,79 @@ body {
   margin: 0 auto;
   text-align: center;
   font-family: "Roboto", "Helvetica Neue", Arial, Helvetica, sans-serif;
-  background: #e4e4e4;
-  color: #232323;
+  background: #f8f0fb;
+  color: #211a1d;
   display: flex;
   flex-direction: column;
 }
 
 .status-success::after {
-  content: " - Url Working";
+  content: " - Working";
   font-size: 12px;
   font-weight: bold;
-  color: green;
+  color: #211a1d;
+}
+
+.link-backer-success {
+  background: rgba(94, 252, 141, 0.4392156863);
 }
 
 .status-error::after {
-  content: " - Url Broken";
+  content: " - Broken";
+  color: #211a1d;
   font-size: 12px;
   font-weight: bold;
-  color: red;
+}
+
+.link-backer-error {
+  background: rgba(238, 46, 49, 0.4392156863);
 }
 
 .status-for-sale::before {
   content: "Domain for sale: ";
-  color: green;
+  color: #211a1d;
   font-weight: bold;
   font-size: 12px;
 }
 
-.link-backer-success {
-  background: rgba(48, 248, 48, 0.299);
+.status-unknown::after {
+  content: " - Status Unknown";
+  color: #211a1d;
+  font-weight: bold;
+  font-size: 12px;
 }
 
-.link-backer-error {
-  background: rgba(104, 13, 13, 0.366);
+.link-backer-unknown {
+  background: rgba(33, 26, 29, 0.1882352941);
+}
+
+.link-removed {
+  display: none;
 }
 
 .main .site-generator-btn {
   border: none;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 2px rgba(33, 26, 29, 0.1882352941);
   width: 35%;
   padding: 10px;
   font-size: 16px;
-  background-color: papayawhip;
-  color: #232323;
+  background-color: #211a1d;
+  color: #f8f0fb;
 }
 .main .site-generator-btn:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-  background-color: rgb(255, 233, 198);
+  box-shadow: 0 0 5px rgba(33, 26, 29, 0.5960784314);
+  background-color: rgba(33, 26, 29, 0.5960784314);
 }
 .main .site-generator-btn:active {
-  background-color: papayawhip;
+  background-color: #211a1d;
+}
+.main .toggle-label {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
 }
 .main .site-list {
   margin-top: 1rem;
@@ -73,7 +96,7 @@ body {
   flex-direction: column;
 }
 .main .site-list div {
-  border-bottom: 1px solid #343434;
+  border-bottom: 1px solid #211a1d;
   padding: 5px;
 }
 .main .site-list:last-child {
@@ -82,21 +105,23 @@ body {
 
 .brand a {
   text-decoration: none;
-  color: #232323;
+  color: #211a1d;
 }
 .brand a img {
   width: 70px;
 }
 .brand .warning-wrap {
   padding: 5px;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  box-shadow: 0 0 2px rgba(33, 26, 29, 0.1882352941);
+  width: 70%;
+  background: rgba(33, 26, 29, 0.1882352941);
   margin: 0.5rem auto 1rem auto;
-  background: papayawhip;
 }
 
 .known-errors {
-  background: PapayaWhip;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  background: rgba(33, 26, 29, 0.1882352941);
+  box-shadow: 0 0 2px rgba(33, 26, 29, 0.1882352941);
   padding: 0.5rem;
   width: 100%;
   margin-top: 1rem;

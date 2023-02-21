@@ -1,3 +1,13 @@
+$brand-blue: #3891a6;
+$brand-black: #211a1d;
+$brand-black-semi-clear: #211a1d98;
+$brand-black-clear: #211a1d30;
+$brand-white: #f8f0fb;
+$brand-green: #5efc8d;
+$brand-green-clear: #5efc8d70;
+$brand-red: #ee2e31;
+$brand-red-clear: #ee2e3170;
+
 *,
 *::before,
 *::after {
@@ -16,61 +26,85 @@ body {
   margin: 0 auto;
   text-align: center;
   font-family: "Roboto", "Helvetica Neue", Arial, Helvetica, sans-serif;
-  background: #e4e4e4;
-  color: #232323;
+  background: $brand-white;
+  color: $brand-black;
 
   display: flex;
   flex-direction: column;
 }
 
-
 .status-success::after {
-  content: " - Url Working";
+  content: " - Working";
   font-size: 12px;
   font-weight: bold;
-  color: green;
+  color: $brand-black;
+}
+
+.link-backer-success {
+  background: $brand-green-clear;
 }
 
 .status-error::after {
-  content: " - Url Broken";
+  content: " - Broken";
+  color: $brand-black;
   font-size: 12px;
   font-weight: bold;
-  color: red;
+}
+
+.link-backer-error {
+  background: $brand-red-clear;
 }
 
 .status-for-sale::before {
   content: "Domain for sale: ";
-  color: green;
+  color: $brand-black;
   font-weight: bold;
   font-size: 12px;
 }
 
-.link-backer-success {
-  background: rgba(48, 248, 48, 0.299);
+.status-unknown::after {
+  content: " - Status Unknown";
+  color: $brand-black;
+  font-weight: bold;
+  font-size: 12px;
 }
 
-.link-backer-error {
-  background: rgba(104, 13, 13, 0.366);
+.link-backer-unknown {
+  background: $brand-black-clear;
+}
+
+.link-removed {
+  display: none;
 }
 
 .main {
-
   .site-generator-btn {
     border: none;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 2px $brand-black-clear;
     width: 35%;
     padding: 10px;
     font-size: 16px;
-    background-color: papayawhip;
-    color: #232323;
+    background-color: $brand-black;
+    color: $brand-white;
   }
 
   .site-generator-btn:hover {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-    background-color: rgb(255, 233, 198)
+    box-shadow: 0 0 5px $brand-black-semi-clear;
+    background-color: $brand-black-semi-clear;
   }
   .site-generator-btn:active {
-    background-color: papayawhip;
+    background-color: $brand-black;
+  }
+
+  .toggle-label {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    #delete-toggle {
+    }
   }
 
   .site-list {
@@ -78,7 +112,7 @@ body {
     display: flex;
     flex-direction: column;
     div {
-      border-bottom: 1px solid #343434;
+      border-bottom: 1px solid $brand-black;
 
       padding: 5px;
     }
@@ -91,7 +125,7 @@ body {
 .brand {
   a {
     text-decoration: none;
-    color: #232323;
+    color: $brand-black;
   }
 
   a img {
@@ -100,19 +134,18 @@ body {
 
   .warning-wrap {
     padding: 5px;
-    // border-radius: 3px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-    // width: 85%;
-    margin: .5rem auto 1rem auto;
-    background: papayawhip;
+    border-radius: 3px;
+    box-shadow: 0 0 2px $brand-black-clear;
+    width: 70%;
+    background: $brand-black-clear;
+    margin: 0.5rem auto 1rem auto;
   }
 }
 
 .known-errors {
-  background: PapayaWhip;
-  box-shadow: 0 0 2px rgba(0,0,0,0.2);
-  padding: .5rem;
+  background: $brand-black-clear;
+  box-shadow: 0 0 2px $brand-black-clear;
+  padding: 0.5rem;
   width: 100%;
   margin-top: 1rem;
 }
-
