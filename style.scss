@@ -3,10 +3,13 @@ $brand-black: #211a1d;
 $brand-black-semi-clear: #211a1d98;
 $brand-black-clear: #211a1d30;
 $brand-white: #f8f0fb;
+$brand-white-clear: #f8f0fb55;
 $brand-green: #5efc8d;
 $brand-green-clear: #5efc8d70;
 $brand-red: #ee2e31;
 $brand-red-clear: #ee2e3170;
+
+@import url('https://css.gg/moon.css');
 
 *,
 *::before,
@@ -62,6 +65,59 @@ body {
   font-size: 12px;
 }
 
+// start tags
+
+@mixin tag-basics {
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: $brand-white;
+  color: $brand-black;
+  font-size: 12px;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.tag-software::after {
+  content: "\f5fc"  + " " + "Tech/Software";
+  @include tag-basics;
+}
+
+.tag-construction::after {
+  content: "\f552"  + " " + "Tools/Construction";
+  @include tag-basics;
+}
+
+.tag-finance::after {
+  content: "\f651"  + " " + "Money/Finance";
+  @include tag-basics;
+}
+
+.tag-food::after {
+  content: "\f6d7" + " " + "Food";
+  @include tag-basics;
+}
+
+.tag-marketing::after {
+  content: "\e473" + " " + "Marketing";
+  @include tag-basics;
+}
+
+.tag-modeling::after {
+  content: "\f587" + " " + "Modeling";
+  @include tag-basics;
+}
+
+.tag-empty::after {
+  font-family: "Roboto", "Helvetica Neue", Arial, Helvetica, sans-serif !important;
+  font-weight: bold !important;
+  content: "Parked/Private Domain";
+  background: $brand-white;
+  @include tag-basics;
+}
+
+// end tags
+
 .status-unknown::after {
   content: " - Status Unknown";
   color: $brand-black;
@@ -69,12 +125,13 @@ body {
   font-size: 12px;
 }
 
+
 .link-backer-unknown {
   background: $brand-black-clear;
 }
 
 .link-removed {
-  display: none;
+  display: none !important;
 }
 
 .main {
@@ -103,8 +160,6 @@ body {
     align-items: center;
     gap: 5px;
     font-size: 12px;
-    #delete-toggle {
-    }
   }
 
   .site-list {
@@ -112,15 +167,22 @@ body {
     display: flex;
     flex-direction: column;
     div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-bottom: 1px solid $brand-black;
-
       padding: 5px;
+
+      a {
+        text-decoration: none;
+      }
     }
   }
   .site-list:last-child {
     border-bottom: none;
   }
 }
+
 
 .brand {
   a {

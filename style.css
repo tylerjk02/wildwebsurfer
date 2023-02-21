@@ -1,3 +1,4 @@
+@import url("https://css.gg/moon.css");
 *,
 *::before,
 *::after {
@@ -51,6 +52,93 @@ body {
   font-size: 12px;
 }
 
+.tag-software::after {
+  content: "\f5fc  Tech/Software";
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: #f8f0fb;
+  color: #211a1d;
+  font-size: 12px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.tag-construction::after {
+  content: "\f552  Tools/Construction";
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: #f8f0fb;
+  color: #211a1d;
+  font-size: 12px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.tag-finance::after {
+  content: "\f651  Money/Finance";
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: #f8f0fb;
+  color: #211a1d;
+  font-size: 12px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.tag-food::after {
+  content: "\f6d7  Food";
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: #f8f0fb;
+  color: #211a1d;
+  font-size: 12px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.tag-marketing::after {
+  content: "\e473  Marketing";
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: #f8f0fb;
+  color: #211a1d;
+  font-size: 12px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.tag-modeling::after {
+  content: "\f587  Modeling";
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: #f8f0fb;
+  color: #211a1d;
+  font-size: 12px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.tag-empty::after {
+  font-family: "Roboto", "Helvetica Neue", Arial, Helvetica, sans-serif !important;
+  font-weight: bold !important;
+  content: "Parked/Private Domain";
+  background: #f8f0fb;
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: #f8f0fb;
+  color: #211a1d;
+  font-size: 12px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
 .status-unknown::after {
   content: " - Status Unknown";
   color: #211a1d;
@@ -63,7 +151,7 @@ body {
 }
 
 .link-removed {
-  display: none;
+  display: none !important;
 }
 
 .main .site-generator-btn {
@@ -96,8 +184,14 @@ body {
   flex-direction: column;
 }
 .main .site-list div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-bottom: 1px solid #211a1d;
   padding: 5px;
+}
+.main .site-list div a {
+  text-decoration: none;
 }
 .main .site-list:last-child {
   border-bottom: none;
