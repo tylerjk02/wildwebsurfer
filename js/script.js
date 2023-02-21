@@ -6,6 +6,21 @@ TODO:
 */
 
 import wordList from "./words.js";
+import stickyWords from "./stickyWords.js";
+import {
+  foodArr,
+  softwareArr,
+  constructionArr,
+  financeArr,
+  marketingArr,
+  modelArr,
+  healthArr,
+  musicArr,
+  vehicleArr,
+  gameArr,
+  furnitureArr,
+  newsArr,
+} from "./tagArrays.js";
 
 // let siteGeneratorTen = document.getElementById("site-generator-ten");
 let siteGenerator = document.getElementById("site-generator");
@@ -24,7 +39,6 @@ function generateNewSite() {
   newSiteDiv.childNodes[0].classList.add("status-unknown"); // New default.
   newSiteDiv.classList.add("link-backer-unknown"); // New default.
 
-
   fetch(newSiteUrl)
     .then(function (response) {
       return response.text();
@@ -38,6 +52,7 @@ function generateNewSite() {
         let pTagGrabber = doc.querySelectorAll("p");
         let h1TagGrabber = doc.querySelectorAll("h1");
         let h2TagGrabber = doc.querySelectorAll("h2");
+        let h3TagGrabber = doc.querySelectorAll("h3");
 
         h1TagGrabber.forEach((e) => {
           let substr = "domain";
@@ -95,71 +110,20 @@ function generateNewSite() {
           foundStrings.push(newH2String);
         });
 
+        h3TagGrabber.forEach((e) => {
+          let newH3String = e.innerText.toLowerCase().trim();
+          foundStrings.push(newH3String);
+        })
+
         // word count calc
 
         let str = foundStrings.join("");
 
-        let occur = nthMostCommon(str, 25);
+        let occur = nthMostCommon(str, 50);
 
         // console.log(occur);
 
         function nthMostCommon(str, amount) {
-          const stickyWords = [
-            "the",
-            "each",
-            "my",
-            "your",
-            "more",
-            "have",
-            "this",
-            "there",
-            "his",
-            "",
-            "has",
-            "is",
-            "by",
-            "at",
-            "and",
-            "so",
-            "if",
-            "than",
-            "but",
-            "about",
-            "in",
-            "on",
-            "the",
-            "was",
-            "for",
-            "that",
-            "with",
-            "not",
-            "can",
-            "we",
-            "said",
-            "a",
-            "or",
-            "of",
-            "to",
-            "there",
-            "will",
-            "be",
-            "what",
-            "get",
-            "go",
-            "think",
-            "just",
-            "every",
-            "are",
-            "it",
-            "were",
-            "had",
-            "i",
-            "very",
-            "you",
-            "our",
-            "all",
-            "an",
-          ];
           str = str.toLowerCase();
           var splitUp = str.split(/\s/);
           const wordsArray = splitUp.filter(function (x) {
@@ -211,53 +175,73 @@ function generateNewSite() {
           if (wordResultsLowercase.includes("domain")) {
             newSiteDiv.childNodes[0].classList.add("status-for-sale");
           }
+
+          // START TAGS
+
           //food tag
-          if (
-            wordResultsLowercase.includes("food") ||
-            wordResultsLowercase.includes("restaurant")
-          ) {
+          if (wordResultsLowercase.some((r) => foodArr.includes(r)) == true) {
             newSiteDiv.childNodes[0].classList.add("tag-food");
           }
-
+          //software tag
+          if (
+            wordResultsLowercase.some((r) => softwareArr.includes(r)) == true
+          ) {
+            newSiteDiv.childNodes[0].classList.add("tag-software");
+          }
           //construction tag
           if (
-            wordResultsLowercase.includes("construction")
+            wordResultsLowercase.some((r) => constructionArr.includes(r)) ==
+            true
           ) {
             newSiteDiv.childNodes[0].classList.add("tag-construction");
           }
           //finance tag
           if (
-            wordResultsLowercase.includes("finance") ||
-            wordResultsLowercase.includes("invest") ||
-            wordResultsLowercase.includes("investing") ||
-            wordResultsLowercase.includes("financial")
+            wordResultsLowercase.some((r) => financeArr.includes(r)) == true
           ) {
             newSiteDiv.childNodes[0].classList.add("tag-finance");
           }
-          //software tag
+          //marketing tag
           if (
-            wordResultsLowercase.includes("software") ||
-            wordResultsLowercase.includes("development") ||
-            wordResultsLowercase.includes("computer") ||
-            wordResultsLowercase.includes("framework")
-          ) {
-            newSiteDiv.childNodes[0].classList.add("tag-software");
-          }
-
-          if (
-            wordResultsLowercase.includes("marketing") ||
-            wordResultsLowercase.includes("promotion")
+            wordResultsLowercase.some((r) => marketingArr.includes(r)) == true
           ) {
             newSiteDiv.childNodes[0].classList.add("tag-marketing");
           }
-
-          if (
-            wordResultsLowercase.includes("model") ||
-            wordResultsLowercase.includes("models") ||
-            wordResultsLowercase.includes("modeling")
-          ) {
+          //modeling tag
+          if (wordResultsLowercase.some((r) => modelArr.includes(r)) == true) {
             newSiteDiv.childNodes[0].classList.add("tag-modeling");
           }
+          //health tag
+          if (wordResultsLowercase.some((r) => healthArr.includes(r)) == true) {
+            newSiteDiv.childNodes[0].classList.add("tag-health");
+          }
+          //music tag
+          if (wordResultsLowercase.some((r) => musicArr.includes(r)) == true) {
+            newSiteDiv.childNodes[0].classList.add("tag-music");
+          }
+          //vehicle tag
+          if (
+            wordResultsLowercase.some((r) => vehicleArr.includes(r)) == true
+          ) {
+            newSiteDiv.childNodes[0].classList.add("tag-vehicle");
+          }
+          //game tag
+          if (wordResultsLowercase.some((r) => gameArr.includes(r)) == true) {
+            newSiteDiv.childNodes[0].classList.add("tag-game");
+          }
+          //furniture tag
+          if (
+            wordResultsLowercase.some((r) => furnitureArr.includes(r)) == true
+          ) {
+            newSiteDiv.childNodes[0].classList.add("tag-furniture");
+          }
+          //news tag
+          if (wordResultsLowercase.some((r) => newsArr.includes(r)) == true) {
+            newSiteDiv.childNodes[0].classList.add("tag-news");
+          }
+
+          // END TAGS
+
           console.log(wordResultsLowercase);
           return result;
         }
@@ -315,8 +299,6 @@ function generateNewSite() {
           }
         })
     );
-    
-
   siteList.appendChild(newSiteDiv);
   sites.push(newSiteUrl);
 }

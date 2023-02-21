@@ -108,6 +108,32 @@ body {
   @include tag-basics;
 }
 
+.tag-health::after {
+  content: "\f21e" + " " + "Health";
+  @include tag-basics;
+}
+
+.tag-music::after {
+  content: "\f001" + " " + "Music";
+  @include tag-basics;
+}
+.tag-vehicle::after {
+  content: "\f1b9" + " " + "Vehicles";
+  @include tag-basics;
+}
+.tag-game::after {
+  content: "\f11b" + " " + "Games";
+  @include tag-basics;
+}
+.tag-furniture::after {
+  content: "\f4b8" + " " + "Furniture";
+  @include tag-basics;
+}
+.tag-news::after {
+  content: "\f1ea" + " " + "News";
+  @include tag-basics;
+}
+
 .tag-empty::after {
   font-family: "Roboto", "Helvetica Neue", Arial, Helvetica, sans-serif !important;
   font-weight: bold !important;

@@ -124,6 +124,78 @@ body {
   font-weight: 900;
 }
 
+.tag-health::after {
+  content: "\f21e  Health";
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: #f8f0fb;
+  color: #211a1d;
+  font-size: 12px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.tag-music::after {
+  content: "\f001  Music";
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: #f8f0fb;
+  color: #211a1d;
+  font-size: 12px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.tag-vehicle::after {
+  content: "\f1b9  Vehicles";
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: #f8f0fb;
+  color: #211a1d;
+  font-size: 12px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.tag-game::after {
+  content: "\f11b  Games";
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: #f8f0fb;
+  color: #211a1d;
+  font-size: 12px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.tag-furniture::after {
+  content: "\f4b8  Furniture";
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: #f8f0fb;
+  color: #211a1d;
+  font-size: 12px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.tag-news::after {
+  content: "\f1ea  News";
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: #f8f0fb;
+  color: #211a1d;
+  font-size: 12px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
 .tag-empty::after {
   font-family: "Roboto", "Helvetica Neue", Arial, Helvetica, sans-serif !important;
   font-weight: bold !important;
