@@ -17,7 +17,7 @@ body {
   margin: 0 auto;
   text-align: center;
   font-family: "Roboto", "Helvetica Neue", Arial, Helvetica, sans-serif;
-  background: #f8f0fb;
+  background: #f4f4f4;
   color: #211a1d;
   display: flex;
   flex-direction: column;
@@ -66,7 +66,7 @@ body {
   content: "\f5fc  Tech/Software";
   border-radius: 3px;
   margin-left: 5px;
-  background-color: #f8f0fb;
+  background-color: #f4f4f4;
   color: #211a1d;
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
@@ -78,7 +78,7 @@ body {
   content: "\f552  Tools/Construction";
   border-radius: 3px;
   margin-left: 5px;
-  background-color: #f8f0fb;
+  background-color: #f4f4f4;
   color: #211a1d;
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
@@ -90,7 +90,7 @@ body {
   content: "\f651  Money/Finance";
   border-radius: 3px;
   margin-left: 5px;
-  background-color: #f8f0fb;
+  background-color: #f4f4f4;
   color: #211a1d;
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
@@ -102,7 +102,7 @@ body {
   content: "\f6d7  Food";
   border-radius: 3px;
   margin-left: 5px;
-  background-color: #f8f0fb;
+  background-color: #f4f4f4;
   color: #211a1d;
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
@@ -114,7 +114,7 @@ body {
   content: "\e473  Marketing";
   border-radius: 3px;
   margin-left: 5px;
-  background-color: #f8f0fb;
+  background-color: #f4f4f4;
   color: #211a1d;
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
@@ -126,7 +126,7 @@ body {
   content: "\f587  Modeling";
   border-radius: 3px;
   margin-left: 5px;
-  background-color: #f8f0fb;
+  background-color: #f4f4f4;
   color: #211a1d;
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
@@ -138,7 +138,7 @@ body {
   content: "\f21e  Health";
   border-radius: 3px;
   margin-left: 5px;
-  background-color: #f8f0fb;
+  background-color: #f4f4f4;
   color: #211a1d;
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
@@ -150,7 +150,7 @@ body {
   content: "\f001  Music";
   border-radius: 3px;
   margin-left: 5px;
-  background-color: #f8f0fb;
+  background-color: #f4f4f4;
   color: #211a1d;
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
@@ -162,7 +162,7 @@ body {
   content: "\f1b9  Vehicles";
   border-radius: 3px;
   margin-left: 5px;
-  background-color: #f8f0fb;
+  background-color: #f4f4f4;
   color: #211a1d;
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
@@ -174,7 +174,7 @@ body {
   content: "\f11b  Games";
   border-radius: 3px;
   margin-left: 5px;
-  background-color: #f8f0fb;
+  background-color: #f4f4f4;
   color: #211a1d;
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
@@ -186,7 +186,7 @@ body {
   content: "\f4b8  Furniture";
   border-radius: 3px;
   margin-left: 5px;
-  background-color: #f8f0fb;
+  background-color: #f4f4f4;
   color: #211a1d;
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
@@ -198,7 +198,7 @@ body {
   content: "\f1ea  News";
   border-radius: 3px;
   margin-left: 5px;
-  background-color: #f8f0fb;
+  background-color: #f4f4f4;
   color: #211a1d;
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
@@ -210,7 +210,7 @@ body {
   content: "\f5a2  Sports";
   border-radius: 3px;
   margin-left: 5px;
-  background-color: #f8f0fb;
+  background-color: #f4f4f4;
   color: #211a1d;
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
@@ -222,7 +222,7 @@ body {
   content: "\f553  Clothes";
   border-radius: 3px;
   margin-left: 5px;
-  background-color: #f8f0fb;
+  background-color: #f4f4f4;
   color: #211a1d;
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
@@ -233,10 +233,10 @@ body {
 .tag-empty::after {
   font-weight: bold !important;
   content: "\f023  Parked/Private Domain";
-  background: #f8f0fb;
+  background: #f4f4f4;
   border-radius: 3px;
   margin-left: 5px;
-  background-color: #f8f0fb;
+  background-color: #f4f4f4;
   color: #211a1d;
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
@@ -266,8 +266,8 @@ body {
   padding: 10px;
   font-size: 16px;
   background-color: #211a1d;
-  color: #f8f0fb;
-  border-bottom: 1px solid #f8f0fb;
+  color: #f4f4f4;
+  border-bottom: 1px solid #f4f4f4;
 }
 .main .site-generator-btn:last-of-type {
   border-bottom: none;

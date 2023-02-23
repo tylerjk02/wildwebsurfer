@@ -19,6 +19,8 @@
   "homepage": "https://github.com/tylerjk02/wildwebsurfer#readme",
   "dependencies": {
     "bootstrap-icons": "^1.10.3",
-    "cheerio": "^1.0.0-rc.12"
+    "cheerio": "^1.0.0-rc.12",
+    "darkmode-js": "^1.5.7",
+    "jquery": "^3.6.3"
   }
 }
