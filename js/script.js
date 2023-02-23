@@ -37,8 +37,8 @@ function generateNewSite() {
 
   if (extensionToggle.checked == true) {
     let ranEndExtension = `.${extensionList[ranExtension]}`;
-    newSiteDiv.innerHTML = `<a target="_blank" href="${newSiteUrl}">${newSite}${ranEndExtension}</a>`;
     newSiteUrl += ranEndExtension;
+    newSiteDiv.innerHTML = `<a target="_blank" href="${newSiteUrl}">${newSite}${ranEndExtension}</a>`;
   } else {
     newSiteUrl += ".com";
     newSiteDiv.innerHTML = `<a target="_blank" href="${newSiteUrl}">${newSite}.com</a>`;
