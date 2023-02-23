@@ -3,40 +3,46 @@ TODO:
 - Better search with tags, prefixes or categories
 - Improve accuracy of site tags
 - Add more tags
+- Improve HTTPS checker
 */
 
 import wordList from "./words.js";
 import stickyWords from "./stickyWords.js";
-import {
-  foodArr,
-  softwareArr,
-  constructionArr,
-  financeArr,
-  marketingArr,
-  modelArr,
-  healthArr,
-  musicArr,
-  vehicleArr,
-  gameArr,
-  furnitureArr,
-  newsArr,
-  sportsArr,
-  clothingArr,
-} from "./tagArrays.js";
+import { arrObb } from "./tagArrays.js";
 
-// let siteGeneratorTen = document.getElementById("site-generator-ten");
+let siteGeneratorTen = document.getElementById("site-generator-ten");
 let siteGenerator = document.getElementById("site-generator");
 let siteList = document.getElementById("site-list");
-
 let sites = [];
 
 function generateNewSite() {
   // Word picker, create URL & make link on page
-
   let newSite = wordList[Math.floor(Math.random() * wordList.length)];
-  let newSiteUrl = `https://${newSite}.com`;
+  let extensionToggle = document.getElementById("extension-toggle");
+  let extensionList = [
+    "com",
+    "net",
+    "net",
+    "org",
+    "org",
+    "co",
+    "co",
+    "us",
+    "us",
+  ];
+  let ranExtension = Math.floor(Math.random() * extensionList.length);
+  let newSiteUrl = `https://${newSite}`;
   let newSiteDiv = document.createElement("div");
-  newSiteDiv.innerHTML = `<a target="_blank" href="${newSiteUrl}">${newSite}.com</a>`;
+  newSiteDiv.classList.add("site-div");
+
+  if (extensionToggle.checked == true) {
+    let ranEndExtension = `.${extensionList[ranExtension]}`;
+    newSiteDiv.innerHTML = `<a target="_blank" href="${newSiteUrl}">${newSite}${ranEndExtension}</a>`;
+    newSiteUrl += ranEndExtension;
+  } else {
+    newSiteUrl += ".com";
+    newSiteDiv.innerHTML = `<a target="_blank" href="${newSiteUrl}">${newSite}.com</a>`;
+  }
 
   newSiteDiv.childNodes[0].classList.add("status-unknown"); // New default.
   newSiteDiv.classList.add("link-backer-unknown"); // New default.
@@ -121,9 +127,7 @@ function generateNewSite() {
 
         let str = foundStrings.join("");
 
-        let occur = nthMostCommon(str, 50);
-
-        // console.log(occur);
+        let occur = nthMostCommon(str, 75);
 
         function nthMostCommon(str, amount) {
           str = str.toLowerCase();
@@ -161,7 +165,9 @@ function generateNewSite() {
           []);
 
           if (result.length <= 1) {
-            newSiteDiv.childNodes[0].classList.add("tag-empty");
+            let emptyTag = document.createElement("div");
+            emptyTag.classList.add("tag-empty");
+            newSiteDiv.appendChild(emptyTag);
           }
           let wordResultList = [];
           result.forEach((e) => {
@@ -178,75 +184,121 @@ function generateNewSite() {
           if (wordResultsLowercase.includes("domain")) {
             newSiteDiv.childNodes[0].classList.add("status-for-sale");
           }
+
           //food tag
-          if (wordResultsLowercase.some((r) => foodArr.includes(r)) == true) {
-            newSiteDiv.childNodes[0].classList.add("tag-food");
+          if (
+            wordResultsLowercase.some((r) => arrObb.food.includes(r)) == true
+          ) {
+            let foodTag = document.createElement("div");
+            foodTag.classList.add("tag-food");
+            newSiteDiv.appendChild(foodTag);
           }
           //software tag
           if (
-            wordResultsLowercase.some((r) => softwareArr.includes(r)) == true
+            wordResultsLowercase.some((r) => arrObb.software.includes(r)) ==
+            true
           ) {
-            newSiteDiv.childNodes[0].classList.add("tag-software");
+            let softwareTag = document.createElement("div");
+            softwareTag.classList.add("tag-software");
+            newSiteDiv.appendChild(softwareTag);
           }
           //construction tag
           if (
-            wordResultsLowercase.some((r) => constructionArr.includes(r)) ==
+            wordResultsLowercase.some((r) => arrObb.construction.includes(r)) ==
             true
           ) {
-            newSiteDiv.childNodes[0].classList.add("tag-construction");
+            let constructionTag = document.createElement("div");
+            constructionTag.classList.add("tag-construction");
+            newSiteDiv.appendChild(constructionTag);
           }
           //finance tag
           if (
-            wordResultsLowercase.some((r) => financeArr.includes(r)) == true
+            wordResultsLowercase.some((r) => arrObb.finance.includes(r)) == true
           ) {
-            newSiteDiv.childNodes[0].classList.add("tag-finance");
+            let financeTag = document.createElement("div");
+            financeTag.classList.add("tag-finance");
+            newSiteDiv.appendChild(financeTag);
           }
           //marketing tag
           if (
-            wordResultsLowercase.some((r) => marketingArr.includes(r)) == true
+            wordResultsLowercase.some((r) => arrObb.marketing.includes(r)) ==
+            true
           ) {
-            newSiteDiv.childNodes[0].classList.add("tag-marketing");
+            let marketingTag = document.createElement("div");
+            marketingTag.classList.add("tag-marketing");
+            newSiteDiv.appendChild(marketingTag);
           }
           //modeling tag
-          if (wordResultsLowercase.some((r) => modelArr.includes(r)) == true) {
-            newSiteDiv.childNodes[0].classList.add("tag-modeling");
+          if (
+            wordResultsLowercase.some((r) => arrObb.model.includes(r)) == true
+          ) {
+            let modelingTag = document.createElement("div");
+            modelingTag.classList.add("tag-model");
+            newSiteDiv.appendChild(modelingTag);
           }
           //health tag
-          if (wordResultsLowercase.some((r) => healthArr.includes(r)) == true) {
-            newSiteDiv.childNodes[0].classList.add("tag-health");
+          if (
+            wordResultsLowercase.some((r) => arrObb.health.includes(r)) == true
+          ) {
+            let healthTag = document.createElement("div");
+            healthTag.classList.add("tag-health");
+            newSiteDiv.appendChild(healthTag);
           }
           //music tag
-          if (wordResultsLowercase.some((r) => musicArr.includes(r)) == true) {
-            newSiteDiv.childNodes[0].classList.add("tag-music");
+          if (
+            wordResultsLowercase.some((r) => arrObb.music.includes(r)) == true
+          ) {
+            let musicTag = document.createElement("div");
+            musicTag.classList.add("tag-music");
+            newSiteDiv.appendChild(musicTag);
           }
           //vehicle tag
           if (
-            wordResultsLowercase.some((r) => vehicleArr.includes(r)) == true
+            wordResultsLowercase.some((r) => arrObb.vehicle.includes(r)) == true
           ) {
-            newSiteDiv.childNodes[0].classList.add("tag-vehicle");
+            let vehicleTag = document.createElement("div");
+            vehicleTag.classList.add("tag-vehicle");
+            newSiteDiv.appendChild(vehicleTag);
           }
           //game tag
-          if (wordResultsLowercase.some((r) => gameArr.includes(r)) == true) {
-            newSiteDiv.childNodes[0].classList.add("tag-game");
+          if (
+            wordResultsLowercase.some((r) => arrObb.game.includes(r)) == true
+          ) {
+            let gameTag = document.createElement('div');
+            gameTag.classList.add("tag-game");
+            newSiteDiv.appendChild(gameTag);
           }
           //furniture tag
           if (
-            wordResultsLowercase.some((r) => furnitureArr.includes(r)) == true
+            wordResultsLowercase.some((r) => arrObb.furniture.includes(r)) ==
+            true
           ) {
-            newSiteDiv.childNodes[0].classList.add("tag-furniture");
+            let furnitureTag = document.createElement('div');
+            furnitureTag.classList.add("tag-furniture");
+            newSiteDiv.appendChild(furnitureTag);
           }
           //news tag
-          if (wordResultsLowercase.some((r) => newsArr.includes(r)) == true) {
-            newSiteDiv.childNodes[0].classList.add("tag-news");
-          }
+          if (
+            wordResultsLowercase.some((r) => arrObb.news.includes(r)) == true
+          ) {
+            let newsTag = document.createElement('div');
+            newsTag.classList.add("tag-news");
+            newSiteDiv.appendChild(newsTag);          }
           //sports tag
-          if (wordResultsLowercase.some((r) => sportsArr.includes(r)) == true) {
-            newSiteDiv.childNodes[0].classList.add("tag-sports");
-          }
+          if (
+            wordResultsLowercase.some((r) => arrObb.sports.includes(r)) == true
+          ) {
+            let sportsTag = document.createElement('div');
+            sportsTag.classList.add("tag-sports");
+            newSiteDiv.appendChild(sportsTag);          }
           //clothing tag
-          if (wordResultsLowercase.some((r) => clothingArr.includes(r)) == true) {
-            newSiteDiv.childNodes[0].classList.add("tag-clothes");
-          }
+          if (
+            wordResultsLowercase.some((r) => arrObb.clothing.includes(r)) ==
+            true
+          ) {
+            let clothingTag = document.createElement('div');
+            clothingTag.classList.add("tag-clothing");
+            newSiteDiv.appendChild(clothingTag);          }
           // END TAGS
 
           console.log(wordResultsLowercase);
@@ -265,6 +317,8 @@ function generateNewSite() {
           // backup sale tester
 
           let responseUrl = response.url;
+          // let prefixSlice = responseUrl.slice(0, 5);
+
           let sellerDomains = [
             "domain",
             "dan.com",
@@ -275,6 +329,13 @@ function generateNewSite() {
           if (sellerDomains.some((v) => responseUrl.includes(v))) {
             newSiteDiv.childNodes[0].classList.add("status-for-sale");
           }
+
+          // if (prefixSlice != "https") {
+          //   newSiteDiv.childNodes[0].classList.remove("status-for-sale");
+          //   newSiteDiv.childNodes[0].classList.add("https-not-present");
+          // }
+
+          // console.log(prefixSlice);
 
           // status test
 
@@ -291,7 +352,6 @@ function generateNewSite() {
           }
         })
         .catch((err) => {
-          console.log(err);
           newSiteDiv.childNodes[0].classList.remove("status-unknown");
           newSiteDiv.classList.remove("link-backer-unknown");
           newSiteDiv.childNodes[0].classList.add("status-error");
@@ -312,6 +372,15 @@ function generateNewSite() {
 
 siteGenerator.addEventListener("click", () => {
   generateNewSite();
+  let errorBox = document.getElementById("error-box");
+  errorBox.style.display = "none";
+});
+
+siteGeneratorTen.addEventListener("click", () => {
+  for (let i = 0; i < 10; i++) {
+    generateNewSite();
+  }
+
   let errorBox = document.getElementById("error-box");
   errorBox.style.display = "none";
 });

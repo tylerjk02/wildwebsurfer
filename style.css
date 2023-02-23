@@ -52,9 +52,18 @@ body {
   font-size: 12px;
 }
 
+.https-not-present::before {
+  content: "Not Secure" !important;
+  color: #211a1d !important;
+  margin-right: 5px !important;
+  font-weight: bold !important;
+  font-size: 12px !important;
+  background: rgba(238, 46, 49, 0.4392156863) !important;
+  padding: 2px !important;
+}
+
 .tag-software::after {
   content: "\f5fc  Tech/Software";
-  padding: 2px;
   border-radius: 3px;
   margin-left: 5px;
   background-color: #f8f0fb;
@@ -62,11 +71,11 @@ body {
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  border-bottom: none;
 }
 
 .tag-construction::after {
   content: "\f552  Tools/Construction";
-  padding: 2px;
   border-radius: 3px;
   margin-left: 5px;
   background-color: #f8f0fb;
@@ -74,11 +83,11 @@ body {
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  border-bottom: none;
 }
 
 .tag-finance::after {
   content: "\f651  Money/Finance";
-  padding: 2px;
   border-radius: 3px;
   margin-left: 5px;
   background-color: #f8f0fb;
@@ -86,11 +95,11 @@ body {
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  border-bottom: none;
 }
 
 .tag-food::after {
   content: "\f6d7  Food";
-  padding: 2px;
   border-radius: 3px;
   margin-left: 5px;
   background-color: #f8f0fb;
@@ -98,11 +107,11 @@ body {
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  border-bottom: none;
 }
 
 .tag-marketing::after {
   content: "\e473  Marketing";
-  padding: 2px;
   border-radius: 3px;
   margin-left: 5px;
   background-color: #f8f0fb;
@@ -110,11 +119,11 @@ body {
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  border-bottom: none;
 }
 
 .tag-modeling::after {
   content: "\f587  Modeling";
-  padding: 2px;
   border-radius: 3px;
   margin-left: 5px;
   background-color: #f8f0fb;
@@ -122,11 +131,11 @@ body {
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  border-bottom: none;
 }
 
 .tag-health::after {
   content: "\f21e  Health";
-  padding: 2px;
   border-radius: 3px;
   margin-left: 5px;
   background-color: #f8f0fb;
@@ -134,11 +143,11 @@ body {
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  border-bottom: none;
 }
 
 .tag-music::after {
   content: "\f001  Music";
-  padding: 2px;
   border-radius: 3px;
   margin-left: 5px;
   background-color: #f8f0fb;
@@ -146,11 +155,11 @@ body {
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  border-bottom: none;
 }
 
 .tag-vehicle::after {
   content: "\f1b9  Vehicles";
-  padding: 2px;
   border-radius: 3px;
   margin-left: 5px;
   background-color: #f8f0fb;
@@ -158,11 +167,11 @@ body {
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  border-bottom: none;
 }
 
 .tag-game::after {
   content: "\f11b  Games";
-  padding: 2px;
   border-radius: 3px;
   margin-left: 5px;
   background-color: #f8f0fb;
@@ -170,11 +179,11 @@ body {
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  border-bottom: none;
 }
 
 .tag-furniture::after {
   content: "\f4b8  Furniture";
-  padding: 2px;
   border-radius: 3px;
   margin-left: 5px;
   background-color: #f8f0fb;
@@ -182,11 +191,11 @@ body {
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  border-bottom: none;
 }
 
 .tag-news::after {
   content: "\f1ea  News";
-  padding: 2px;
   border-radius: 3px;
   margin-left: 5px;
   background-color: #f8f0fb;
@@ -194,11 +203,11 @@ body {
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  border-bottom: none;
 }
 
 .tag-sports::after {
   content: "\f5a2  Sports";
-  padding: 2px;
   border-radius: 3px;
   margin-left: 5px;
   background-color: #f8f0fb;
@@ -206,11 +215,11 @@ body {
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  border-bottom: none;
 }
 
 .tag-cloths::after {
   content: "\f553  Clothes";
-  padding: 2px;
   border-radius: 3px;
   margin-left: 5px;
   background-color: #f8f0fb;
@@ -218,14 +227,13 @@ body {
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  border-bottom: none;
 }
 
 .tag-empty::after {
-  font-family: "Roboto", "Helvetica Neue", Arial, Helvetica, sans-serif !important;
   font-weight: bold !important;
-  content: "Parked/Private Domain";
+  content: "\f023  Parked/Private Domain";
   background: #f8f0fb;
-  padding: 2px;
   border-radius: 3px;
   margin-left: 5px;
   background-color: #f8f0fb;
@@ -233,6 +241,7 @@ body {
   font-size: 12px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  border-bottom: none;
 }
 
 .status-unknown::after {
@@ -258,6 +267,10 @@ body {
   font-size: 16px;
   background-color: #211a1d;
   color: #f8f0fb;
+  border-bottom: 1px solid #f8f0fb;
+}
+.main .site-generator-btn:last-of-type {
+  border-bottom: none;
 }
 .main .site-generator-btn:hover {
   box-shadow: 0 0 5px rgba(33, 26, 29, 0.5960784314);
@@ -272,25 +285,22 @@ body {
   justify-content: center;
   align-items: center;
   gap: 5px;
-  font-size: 12px;
+  font-size: 14px;
 }
 .main .site-list {
+  margin: 0 auto;
+  width: 75%;
   margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
 }
-.main .site-list div {
+.main .site-list .site-div {
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid #211a1d;
-  padding: 5px;
+  padding: 4px;
 }
-.main .site-list div a {
+.main .site-list .site-div a {
   text-decoration: none;
-}
-.main .site-list:last-child {
-  border-bottom: none;
 }
 
 .brand a {

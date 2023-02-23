@@ -56,17 +56,23 @@
     <main class="main">
       <button class="site-generator-btn" id="site-generator">Generate</button
       ><br />
+      <button class="site-generator-btn" id="site-generator-ten">Generate x10</button
+      ><br />
       <label class="toggle-label" for="delete-toggle">
         Auto-Delete Broken URLs
         <input type="checkbox" name="delete-toggle" id="delete-toggle" />
       </label>
-
+      <label class="toggle-label" for="extension-toggle">
+        Random Extensions (eg. .net, .org)
+        <input type="checkbox" name="extension-toggle" id="extension-toggle" />
+      </label>
       <div class="known-errors" id="error-box">
         <h3>Known Errors:</h3>
         <p style="font-size: 12px; color: #b21717">
           -URL response tester broken on iOS devices.<br />
-          -Domain-for-sale occasionally incorrect<br />
-          -Tag Handler occasionally incorrect
+          -Tag Handler occasionally incorrect<br />
+          -HTTP detection often incorrect (Disabled for maintenance)<br />
+          -Random extension sites usually lead to 'Privacy not secure' error page<br />
         </p>
       </div>
 

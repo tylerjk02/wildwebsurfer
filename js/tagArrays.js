@@ -1,45 +1,20 @@
-let foodArr = ["food", "eat", "restaurant", "cafe"];
-
-let softwareArr = ["software", "framework", "programming"];
-
-let constructionArr = ["engineering", "construction"];
-
-let financeArr = ["finance", "financial", "invest", "investing"];
-
-let marketingArr = ["marketing", "advertising", "promotion"];
-
-let modelArr = ["model", "models", "modeling"];
-
-let healthArr = ["pharmacy", "pharmaceutical", "medicine", "medical"];
-
-let musicArr = ["music", "vinyl"];
-
-let vehicleArr = ["car", "cars", "dealership", "truck"];
-
-let gameArr = ["game", "gamer", "mmo", "rpg", "mmorpg"];
-
-let furnitureArr = ["furniture", "decoration"];
-
-let newsArr = ["news"];
-
-let sportsArr = ["sport", "sports"];
-
-let clothingArr = ["clothes", "clothing", "shirts", "pants", "sweaters"];
-
+let arrObb = {
+  food: ["food", "eat", "restaurant", "cafe"],
+  software: ["software", "framework", "programming"],
+  construction: ["engineering", "construction"],
+  finance: ["finance", "financial", "invest", "investing"],
+  marketing: ["marketing", "advertising", "promotion"],
+  model: ["model", "models", "modeling"],
+  health: ["pharmacy", "pharmaceutical", "medicine", "medical"],
+  music: ["music", "vinyl", "instruments"],
+  vehicle: ["car", "cars", "dealership", "truck"],
+  game: ["game", "gamer", "mmo", "rpg", "mmorpg"],
+  furniture: ["furniture", "decoration"],
+  news: ["news"],
+  sports: ["sport", "sports", "golf", "hockey", "basketball", "football", "soccer"],
+  clothing: ["clothes", "clothing", "shirts", "pants", "sweaters"]
+}
 
 export {
-  clothingArr,
-  sportsArr,
-  foodArr,
-  softwareArr,
-  constructionArr,
-  financeArr,
-  marketingArr,
-  modelArr,
-  healthArr,
-  musicArr,
-  vehicleArr,
-  gameArr,
-  furnitureArr,
-  newsArr
+  arrObb
 };
