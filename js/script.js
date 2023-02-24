@@ -47,6 +47,62 @@ function generateNewSite() {
   newSiteDiv.childNodes[0].classList.add("status-unknown"); // New default.
   newSiteDiv.classList.add("link-backer-unknown"); // New default.
 
+  fetch(newSiteUrl, {
+    method: "GET",
+  })
+    .then((response) => {
+      // backup sale tester
+
+      let responseUrl = response.url;
+      // let prefixSlice = responseUrl.slice(0, 5);
+
+      let sellerDomains = [
+        "domain",
+        "dan.com",
+        "squadhelp",
+        "godaddy",
+        "uniregistry",
+      ];
+      if (sellerDomains.some((v) => responseUrl.includes(v))) {
+        newSiteDiv.childNodes[0].classList.add("status-for-sale");
+      }
+
+      // if (prefixSlice != "https") {
+      //   newSiteDiv.childNodes[0].classList.remove("status-for-sale");
+      //   newSiteDiv.childNodes[0].classList.add("https-not-present");
+      // }
+
+      // console.log(prefixSlice);
+
+      // status test
+
+      if (response.status == 200) {
+        newSiteDiv.childNodes[0].classList.remove("status-unknown");
+        newSiteDiv.classList.remove("link-backer-unknown");
+        newSiteDiv.childNodes[0].classList.add("status-success");
+        newSiteDiv.classList.add("link-backer-success");
+      } else {
+        newSiteDiv.childNodes[0].classList.remove("status-unknown");
+        newSiteDiv.classList.remove("link-backer-unknown");
+        newSiteDiv.childNodes[0].classList.add("status-error");
+        newSiteDiv.classList.add("link-backer-error");
+      }
+    })
+    .catch((err) => {
+      newSiteDiv.childNodes[0].classList.remove("status-unknown");
+      newSiteDiv.classList.remove("link-backer-unknown");
+      newSiteDiv.childNodes[0].classList.add("status-error");
+      newSiteDiv.classList.add("link-backer-error");
+
+      let deleteToggle = document.getElementById("delete-toggle");
+      if (deleteToggle.checked == true) {
+        let errorLinks = document.querySelectorAll(".link-backer-error");
+        errorLinks.forEach((e) => {
+          e.classList.add("link-removed");
+        });
+      }
+    });
+
   fetch(newSiteUrl)
     .then(function (response) {
       return response.text();
@@ -103,10 +159,10 @@ function generateNewSite() {
           foundStrings.push(newPString);
         });
 
-        aTagGrabber.forEach((e) => {
-          let newAString = e.innerText.toLowerCase().trim();
-          foundStrings.push(newAString);
-        });
+        // aTagGrabber.forEach((e) => {
+        //   let newAString = e.innerText.toLowerCase().trim();
+        //   foundStrings.push(newAString);
+        // });
 
         h1TagGrabber.forEach((e) => {
           let newH1String = e.innerText.toLowerCase().trim();
@@ -173,9 +229,12 @@ function generateNewSite() {
           result.forEach((e) => {
             wordResultList.push(e.word);
           });
-          let wordResultsLowercase = [];
+          var wordResultsLowercase = [];
           wordResultList.forEach((e) => {
-            wordResultsLowercase.push(e.toLowerCase());
+            wordResultsLowercase.push(e.toLowerCase()
+            .replace(",", "")
+            .replace('"', "")
+            .replace(".", ""));
           });
 
           // START TAGS
@@ -264,7 +323,7 @@ function generateNewSite() {
           if (
             wordResultsLowercase.some((r) => arrObj.game.includes(r)) == true
           ) {
-            let gameTag = document.createElement('div');
+            let gameTag = document.createElement("div");
             gameTag.classList.add("tag-game");
             newSiteDiv.appendChild(gameTag);
           }
@@ -273,7 +332,7 @@ function generateNewSite() {
             wordResultsLowercase.some((r) => arrObj.furniture.includes(r)) ==
             true
           ) {
-            let furnitureTag = document.createElement('div');
+            let furnitureTag = document.createElement("div");
             furnitureTag.classList.add("tag-furniture");
             newSiteDiv.appendChild(furnitureTag);
           }
@@ -281,84 +340,49 @@ function generateNewSite() {
           if (
             wordResultsLowercase.some((r) => arrObj.sports.includes(r)) == true
           ) {
-            let sportsTag = document.createElement('div');
+            let sportsTag = document.createElement("div");
             sportsTag.classList.add("tag-sports");
-            newSiteDiv.appendChild(sportsTag);          }
+            newSiteDiv.appendChild(sportsTag);
+          }
           //clothing tag
           if (
             wordResultsLowercase.some((r) => arrObj.clothing.includes(r)) ==
             true
           ) {
-            let clothingTag = document.createElement('div');
+            let clothingTag = document.createElement("div");
             clothingTag.classList.add("tag-clothing");
-            newSiteDiv.appendChild(clothingTag);          }
+            newSiteDiv.appendChild(clothingTag);
+          }
+
+          // let newBreak = document.createElement('br');
+          // newSiteDiv.appendChild(newBreak);
           // END TAGS
+
+          let keywordList = [];
+          let keywords = wordResultsLowercase.forEach((e) => {
+            if (keywordList.length < 5 && e.length > 4 && e.length < 9) {
+              keywordList.push(e);
+            }
+          });
+          let keywordsDiv = document.createElement("div");
+          keywordsDiv.classList.add('keywords');
+          if(keywordList.length == 0) {
+            keywordsDiv.classList.remove('keywords');
+          }
+          newSiteDiv.appendChild(keywordsDiv);
+          keywordsDiv.innerText = keywordList.join(", ");
+          console.log(keywordList);
 
           console.log(wordResultsLowercase);
           return result;
         }
 
         // -- end word count calc --
-      },
+      }
 
       // -- end main sale tester --
-
-      fetch(newSiteUrl, {
-        method: "GET",
-      })
-        .then((response) => {
-          // backup sale tester
-
-          let responseUrl = response.url;
-          // let prefixSlice = responseUrl.slice(0, 5);
-
-          let sellerDomains = [
-            "domain",
-            "dan.com",
-            "squadhelp",
-            "godaddy",
-            "uniregistry",
-          ];
-          if (sellerDomains.some((v) => responseUrl.includes(v))) {
-            newSiteDiv.childNodes[0].classList.add("status-for-sale");
-          }
-
-          // if (prefixSlice != "https") {
-          //   newSiteDiv.childNodes[0].classList.remove("status-for-sale");
-          //   newSiteDiv.childNodes[0].classList.add("https-not-present");
-          // }
-
-          // console.log(prefixSlice);
-
-          // status test
-
-          if (response.status == 200) {
-            newSiteDiv.childNodes[0].classList.remove("status-unknown");
-            newSiteDiv.classList.remove("link-backer-unknown");
-            newSiteDiv.childNodes[0].classList.add("status-success");
-            newSiteDiv.classList.add("link-backer-success");
-          } else {
-            newSiteDiv.childNodes[0].classList.remove("status-unknown");
-            newSiteDiv.classList.remove("link-backer-unknown");
-            newSiteDiv.childNodes[0].classList.add("status-error");
-            newSiteDiv.classList.add("link-backer-error");
-          }
-        })
-        .catch((err) => {
-          newSiteDiv.childNodes[0].classList.remove("status-unknown");
-          newSiteDiv.classList.remove("link-backer-unknown");
-          newSiteDiv.childNodes[0].classList.add("status-error");
-          newSiteDiv.classList.add("link-backer-error");
-
-          let deleteToggle = document.getElementById("delete-toggle");
-          if (deleteToggle.checked == true) {
-            let errorLinks = document.querySelectorAll(".link-backer-error");
-            errorLinks.forEach((e) => {
-              e.classList.add("link-removed");
-            });
-          }
-        })
     );
+
   siteList.appendChild(newSiteDiv);
   sites.push(newSiteUrl);
 }
@@ -379,5 +403,4 @@ siteGeneratorTen.addEventListener("click", () => {
   let errorBox = document.getElementById("error-box");
   errorBox.style.display = "none";
   footer.style.display = "none";
-
 });

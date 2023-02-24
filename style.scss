@@ -39,7 +39,7 @@ body {
 .status-success::after {
   content: " - Working";
   font-size: 12px;
-  font-weight: bold;
+  // font-weight: bold;
   color: $brand-black;
 }
 
@@ -51,7 +51,7 @@ body {
   content: " - Broken";
   color: $brand-black;
   font-size: 12px;
-  font-weight: bold;
+  // font-weight: bold;
 }
 
 .link-backer-error {
@@ -61,7 +61,7 @@ body {
 .status-for-sale::before {
   content: "Domain for sale: ";
   color: $brand-black;
-  font-weight: bold;
+  // font-weight: bold;
   font-size: 12px;
 }
 
@@ -168,7 +168,7 @@ body {
 .status-unknown::after {
   content: " - Status Unknown";
   color: $brand-black;
-  font-weight: bold;
+  // font-weight: bold;
   font-size: 12px;
 }
 
@@ -216,10 +216,11 @@ body {
 
   .site-list {
     margin: 0 auto;
-    width: 75%;
+
     margin-top: 1rem;
     .site-div {
-      display: flex;
+      // text-align: center;
+      // display: flex;
       align-items: center;
       justify-content: center;
       border-bottom: 1px solid $brand-black;
@@ -232,7 +233,17 @@ body {
     }    
   }
 }
-
+.keywords {
+  // width: 90%;
+  margin: 0 auto;
+  // border-top: 1px solid black;
+  font-size: 12px;
+  font-weight: bold;
+}
+.keywords::before {
+  content: 'Keywords: ';
+  font-weight: normal;
+}
 
 .brand {
   a {

@@ -5,6 +5,8 @@ const stickyWords = [
   "as",
   "from",
   'he',
+  'no',
+  'take',
   "your",
   "more",
   "have",
