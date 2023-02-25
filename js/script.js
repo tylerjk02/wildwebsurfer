@@ -353,6 +353,16 @@ function generateNewSite() {
             clothingTag.classList.add("tag-clothing");
             newSiteDiv.appendChild(clothingTag);
           }
+          //pet tag
+          if (
+            wordResultsLowercase.some((r) => arrObj.pets.includes(r)) ==
+            true
+          ) {
+            let petTag = document.createElement("div");
+            petTag.classList.add("tag-pets");
+            newSiteDiv.appendChild(petTag);
+          }
+  
 
           // let newBreak = document.createElement('br');
           // newSiteDiv.appendChild(newBreak);
@@ -371,9 +381,9 @@ function generateNewSite() {
           }
           newSiteDiv.appendChild(keywordsDiv);
           keywordsDiv.innerText = keywordList.join(", ");
-          console.log(keywordList);
+          // console.log(keywordList);
 
-          console.log(wordResultsLowercase);
+          // console.log(wordResultsLowercase);
           return result;
         }
 

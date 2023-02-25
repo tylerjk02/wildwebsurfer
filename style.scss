@@ -153,6 +153,10 @@ body {
   content: "\f553" + " " + "Clothes";
   @include tag-basics;
 }
+.tag-pets::after {
+  content: "\f6d3" + " " + "Pets";
+  @include tag-basics;
+}
 
 
 .tag-empty::after {
@@ -217,7 +221,7 @@ body {
   .site-list {
     margin: 0 auto;
 
-    margin-top: 1rem;
+    margin-top: .5rem;
     .site-div {
       // text-align: center;
       // display: flex;
@@ -249,10 +253,18 @@ body {
   a {
     text-decoration: none;
     color: $brand-black;
-  }
 
+    h1 {
+      font-size: 22px;
+    }
+    
+    
+  }
+  p {
+    font-size: 14px;
+  }
   a img {
-    width: 70px;
+    width: 55px;
   }
 
   .warning-wrap {
@@ -261,14 +273,14 @@ body {
     box-shadow: 0 0 2px $brand-black-clear;
     width: 70%;
     background: $brand-black-clear;
-    margin: 0.5rem auto 1rem auto;
+    margin: 0.25rem auto .5rem auto;
   }
 }
 
 .known-errors {
   background: $brand-black-clear;
   box-shadow: 0 0 2px $brand-black-clear;
-  padding: 0.5rem;
+  padding: 0.25rem;
   width: 100%;
   margin-top: 1rem;
 }

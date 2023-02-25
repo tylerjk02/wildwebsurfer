@@ -227,6 +227,18 @@ body {
   border-bottom: none;
 }
 
+.tag-pets::after {
+  content: "\f6d3  Pets";
+  border-radius: 3px;
+  margin-left: 5px;
+  background-color: #f4f4f4;
+  color: #211a1d;
+  font-size: 12px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  border-bottom: none;
+}
+
 .tag-empty::after {
   font-weight: bold !important;
   content: "\f023  Parked/Private Domain";
@@ -285,7 +297,7 @@ body {
 }
 .main .site-list {
   margin: 0 auto;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 .main .site-list .site-div {
   align-items: center;
@@ -312,8 +324,14 @@ body {
   text-decoration: none;
   color: #211a1d;
 }
+.brand a h1 {
+  font-size: 22px;
+}
+.brand p {
+  font-size: 14px;
+}
 .brand a img {
-  width: 70px;
+  width: 55px;
 }
 .brand .warning-wrap {
   padding: 5px;
@@ -321,13 +339,13 @@ body {
   box-shadow: 0 0 2px rgba(33, 26, 29, 0.1882352941);
   width: 70%;
   background: rgba(33, 26, 29, 0.1882352941);
-  margin: 0.5rem auto 1rem auto;
+  margin: 0.25rem auto 0.5rem auto;
 }
 
 .known-errors {
   background: rgba(33, 26, 29, 0.1882352941);
   box-shadow: 0 0 2px rgba(33, 26, 29, 0.1882352941);
-  padding: 0.5rem;
+  padding: 0.25rem;
   width: 100%;
   margin-top: 1rem;
 }/*# sourceMappingURL=style.css.map */

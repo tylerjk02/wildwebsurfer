@@ -11,7 +11,8 @@ let arrObj = {
   game: ["game", "gamer", "mmo", "rpg", "mmorpg"],
   furniture: ["furniture", "decoration"],
   sports: ["sport", "sports", "golf", "hockey", "basketball", "football", "soccer"],
-  clothing: ["clothes", "clothing", "shirts", "pants", "sweaters"]
+  clothing: ["clothes", "clothing", "shirts", "pants", "sweaters"],
+  pets: ["pet", "pets", "dogs", "cats", "dog", "cat", "fish"]
 }
 
 export {
