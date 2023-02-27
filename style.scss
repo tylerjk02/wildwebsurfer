@@ -36,6 +36,11 @@ body {
   flex-direction: column;
 }
 
+.semi-clear {
+  font-size: 14px; 
+  color: $brand-black;
+}
+
 .status-success::after {
   content: " - Working";
   font-size: 12px;
@@ -299,10 +304,26 @@ body {
   }
 }
 
+.about {
+  margin-top: 0 !important;
+}
+
+.foot-container {
+  background: $brand-black-clear;
+  margin: 0.5rem 0;
+  padding: .25rem;
+
+  h4 {
+    font-size: 16px;
+  }
+}
+
 .known-errors {
   background: $brand-black-clear;
   box-shadow: 0 0 2px $brand-black-clear;
   padding: 0.25rem;
-  width: 100%;
-  margin-top: 1rem;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: .5rem;
+  border-radius: 5px;
 }

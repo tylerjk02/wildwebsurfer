@@ -23,6 +23,11 @@ body {
   flex-direction: column;
 }
 
+.semi-clear {
+  font-size: 14px;
+  color: #211a1d;
+}
+
 .status-success::after {
   content: " - Working";
   font-size: 12px;
@@ -354,10 +359,25 @@ body {
   margin: 0.25rem auto 0.5rem auto;
 }
 
+.about {
+  margin-top: 0 !important;
+}
+
+.foot-container {
+  background: rgba(33, 26, 29, 0.1882352941);
+  margin: 0.5rem 0;
+  padding: 0.25rem;
+}
+.foot-container h4 {
+  font-size: 16px;
+}
+
 .known-errors {
   background: rgba(33, 26, 29, 0.1882352941);
   box-shadow: 0 0 2px rgba(33, 26, 29, 0.1882352941);
   padding: 0.25rem;
-  width: 100%;
-  margin-top: 1rem;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  border-radius: 5px;
 }/*# sourceMappingURL=style.css.map */

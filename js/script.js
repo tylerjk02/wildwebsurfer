@@ -4,6 +4,7 @@ TODO:
 - Improve accuracy of site tags
 - Add more tags
 - Improve HTTPS checker
+- !! FIX TAGGING SYSTEM !!
 */
 
 import wordList from "./words.js";
@@ -268,9 +269,8 @@ function generateNewSite() {
                 let newTag = document.createElement('div');
                 if(newTag.classList.contains('tag-${e}') != true) {
                   newTag.classList.add(`tag-${e}`);
+                  tagContainer.appendChild(newTag);
                 }
-                tagContainer.appendChild(newTag);
-              } else {
               }
             })
           })
