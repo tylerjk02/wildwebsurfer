@@ -33,7 +33,7 @@ body {
   color: $brand-black;
 
   display: flex;
-  // flex-direction: column;
+  flex-direction: column;
 }
 
 .status-success::after {
@@ -61,7 +61,7 @@ body {
 .status-for-sale::before {
   content: "Domain for sale: ";
   color: $brand-black;
-  // font-weight: bold;
+  font-weight: bold;
   font-size: 12px;
 }
 
@@ -169,6 +169,8 @@ body {
 .tag-container {
   display: flex !important;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
   // background: black;
 }
@@ -188,6 +190,21 @@ body {
 
 .link-removed {
   display: none !important;
+}
+
+.site-desc {
+  background: $brand-green-clear;
+  color: $brand-black;
+  font-size: 14px;
+  margin: 5px 10%;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.site-desc::before {
+  content: "Site Description: ";
+  opacity: .8;
+  // text-decoration: underline;
 }
 
 .main {
@@ -237,7 +254,7 @@ body {
 
       a {
         text-decoration: none;
-
+        font-size: 20px;
       }
     }    
   }

@@ -112,6 +112,16 @@ function generateNewSite() {
       function (html) {
         let parser = new DOMParser();
         let doc = parser.parseFromString(html, "text/html");
+        let docHead = doc.querySelector('head');
+        if(doc.querySelector('meta[name="description"') != null) {
+          let docDesc = doc.querySelector('meta[name="description"]').content;
+
+          let descDiv = document.createElement('div');
+          descDiv.classList.add('site-desc');
+          descDiv.innerText = docDesc;
+          newSiteDiv.appendChild(descDiv);
+        }
+
 
         let aTagGrabber = doc.querySelectorAll("a");
         let pTagGrabber = doc.querySelectorAll("p");
@@ -250,7 +260,7 @@ function generateNewSite() {
             newSiteDiv.childNodes[0].classList.add("status-for-sale");
           }
           
-          // new tag handler
+          // new tag setter
 
           Object.keys(arrObj).forEach(e => {
             arrObj[e].forEach(x => {
