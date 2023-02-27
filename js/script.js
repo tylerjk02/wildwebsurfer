@@ -55,7 +55,7 @@ function generateNewSite() {
 
       let responseUrl = response.url;
       // let prefixSlice = responseUrl.slice(0, 5);
-
+      
       let sellerDomains = [
         "domain",
         "dan.com",
@@ -106,6 +106,7 @@ function generateNewSite() {
   fetch(newSiteUrl)
     .then(function (response) {
       return response.text();
+      
     })
     .then(
       function (html) {
@@ -181,6 +182,10 @@ function generateNewSite() {
 
         // word count calc
 
+        let tagContainer = document.createElement('div');
+        tagContainer.classList.add('tag-container');
+        newSiteDiv.appendChild(tagContainer);
+
         let str = foundStrings.join("");
 
         let occur = nthMostCommon(str, 85);
@@ -220,6 +225,8 @@ function generateNewSite() {
           },
           []);
 
+
+
           if (result.length <= 1) {
             let emptyTag = document.createElement("div");
             emptyTag.classList.add("tag-empty");
@@ -238,135 +245,27 @@ function generateNewSite() {
           });
 
           // START TAGS
-
           //secondary back-up domain sale check
           if (wordResultsLowercase.includes("domain")) {
             newSiteDiv.childNodes[0].classList.add("status-for-sale");
           }
+          
+          // new tag handler
 
-          //food tag
-          if (
-            wordResultsLowercase.some((r) => arrObj.food.includes(r)) == true
-          ) {
-            let foodTag = document.createElement("div");
-            foodTag.classList.add("tag-food");
-            newSiteDiv.appendChild(foodTag);
-          }
-          //software tag
-          if (
-            wordResultsLowercase.some((r) => arrObj.software.includes(r)) ==
-            true
-          ) {
-            let softwareTag = document.createElement("div");
-            softwareTag.classList.add("tag-software");
-            newSiteDiv.appendChild(softwareTag);
-          }
-          //construction tag
-          if (
-            wordResultsLowercase.some((r) => arrObj.construction.includes(r)) ==
-            true
-          ) {
-            let constructionTag = document.createElement("div");
-            constructionTag.classList.add("tag-construction");
-            newSiteDiv.appendChild(constructionTag);
-          }
-          //finance tag
-          if (
-            wordResultsLowercase.some((r) => arrObj.finance.includes(r)) == true
-          ) {
-            let financeTag = document.createElement("div");
-            financeTag.classList.add("tag-finance");
-            newSiteDiv.appendChild(financeTag);
-          }
-          //marketing tag
-          if (
-            wordResultsLowercase.some((r) => arrObj.marketing.includes(r)) ==
-            true
-          ) {
-            let marketingTag = document.createElement("div");
-            marketingTag.classList.add("tag-marketing");
-            newSiteDiv.appendChild(marketingTag);
-          }
-          //modeling tag
-          if (
-            wordResultsLowercase.some((r) => arrObj.model.includes(r)) == true
-          ) {
-            let modelingTag = document.createElement("div");
-            modelingTag.classList.add("tag-model");
-            newSiteDiv.appendChild(modelingTag);
-          }
-          //health tag
-          if (
-            wordResultsLowercase.some((r) => arrObj.health.includes(r)) == true
-          ) {
-            let healthTag = document.createElement("div");
-            healthTag.classList.add("tag-health");
-            newSiteDiv.appendChild(healthTag);
-          }
-          //music tag
-          if (
-            wordResultsLowercase.some((r) => arrObj.music.includes(r)) == true
-          ) {
-            let musicTag = document.createElement("div");
-            musicTag.classList.add("tag-music");
-            newSiteDiv.appendChild(musicTag);
-          }
-          //vehicle tag
-          if (
-            wordResultsLowercase.some((r) => arrObj.vehicle.includes(r)) == true
-          ) {
-            let vehicleTag = document.createElement("div");
-            vehicleTag.classList.add("tag-vehicle");
-            newSiteDiv.appendChild(vehicleTag);
-          }
-          //game tag
-          if (
-            wordResultsLowercase.some((r) => arrObj.game.includes(r)) == true
-          ) {
-            let gameTag = document.createElement("div");
-            gameTag.classList.add("tag-game");
-            newSiteDiv.appendChild(gameTag);
-          }
-          //furniture tag
-          if (
-            wordResultsLowercase.some((r) => arrObj.furniture.includes(r)) ==
-            true
-          ) {
-            let furnitureTag = document.createElement("div");
-            furnitureTag.classList.add("tag-furniture");
-            newSiteDiv.appendChild(furnitureTag);
-          }
-          //sports tag
-          if (
-            wordResultsLowercase.some((r) => arrObj.sports.includes(r)) == true
-          ) {
-            let sportsTag = document.createElement("div");
-            sportsTag.classList.add("tag-sports");
-            newSiteDiv.appendChild(sportsTag);
-          }
-          //clothing tag
-          if (
-            wordResultsLowercase.some((r) => arrObj.clothing.includes(r)) ==
-            true
-          ) {
-            let clothingTag = document.createElement("div");
-            clothingTag.classList.add("tag-clothing");
-            newSiteDiv.appendChild(clothingTag);
-          }
-          //pet tag
-          if (
-            wordResultsLowercase.some((r) => arrObj.pets.includes(r)) ==
-            true
-          ) {
-            let petTag = document.createElement("div");
-            petTag.classList.add("tag-pets");
-            newSiteDiv.appendChild(petTag);
-          }
-  
+          Object.keys(arrObj).forEach(e => {
+            arrObj[e].forEach(x => {
+              if(wordResultsLowercase.includes(x)) {
+                let newTag = document.createElement('div');
+                if(newTag.classList.contains('tag-${e}') != true) {
+                  newTag.classList.add(`tag-${e}`);
+                }
+                tagContainer.appendChild(newTag);
+              } else {
+              }
+            })
+          })
 
-          // let newBreak = document.createElement('br');
-          // newSiteDiv.appendChild(newBreak);
-          // END TAGS
+          // end tag setter
 
           let keywordList = [];
           let keywords = wordResultsLowercase.forEach((e) => {
@@ -381,9 +280,7 @@ function generateNewSite() {
           }
           newSiteDiv.appendChild(keywordsDiv);
           keywordsDiv.innerText = keywordList.join(", ");
-          // console.log(keywordList);
 
-          // console.log(wordResultsLowercase);
           return result;
         }
 

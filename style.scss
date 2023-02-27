@@ -33,7 +33,7 @@ body {
   color: $brand-black;
 
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
 }
 
 .status-success::after {
@@ -77,8 +77,10 @@ body {
 
 // start tags
 
+
 @mixin tag-basics {
   // padding: 2px;
+  // align-self: auto;
   border-radius: 3px;
   margin-left: 5px;
   background-color: $brand-white;
@@ -141,10 +143,6 @@ body {
   content: "\f4b8" + " " + "Furniture";
   @include tag-basics;
 }
-.tag-news::after {
-  content: "\f1ea" + " " + "News";
-  @include tag-basics;
-}
 .tag-sports::after {
   content: "\f5a2" + " " + "Sports";
   @include tag-basics;
@@ -167,6 +165,13 @@ body {
   @include tag-basics;
 }
 
+
+.tag-container {
+  display: flex !important;
+  flex-direction: row;
+  gap: 5px;
+  // background: black;
+}
 // end tags
 
 .status-unknown::after {

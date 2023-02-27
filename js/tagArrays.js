@@ -4,14 +4,14 @@ let arrObj = {
   construction: ["engineering", "construction"],
   finance: ["finance", "financial", "invest", "investing"],
   marketing: ["marketing", "advertising", "promotion"],
-  model: ["model", "models", "modeling"],
+  modeling: ["model", "models", "modeling"],
   health: ["pharmacy", "pharmaceutical", "medicine", "medical"],
   music: ["music", "vinyl", "instruments"],
   vehicle: ["car", "cars", "dealership", "truck"],
   game: ["game", "gamer", "mmo", "rpg", "mmorpg"],
   furniture: ["furniture", "decoration"],
   sports: ["sport", "sports", "golf", "hockey", "basketball", "football", "soccer"],
-  clothing: ["clothes", "clothing", "shirts", "pants", "sweaters"],
+  cloths: ["clothes", "clothing", "shirts", "pants", "sweaters"],
   pets: ["pet", "pets", "dogs", "cats", "dog", "cat", "fish"]
 }
 
